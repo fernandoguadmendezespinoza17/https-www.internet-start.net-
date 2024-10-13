@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no" />
+  <meta http-equiv="proma" content="no-cache" />
+  <meta http-equiv="cache-control" content="no cache" />
+  <meta http-equiv="expires" content="0" />
+  <link rel="stylesheet" type="text/css" href="./static/css/style.css">
+  <script type="text/javascript" src="./static/js/jquery.min.js"></script>
+  <script type="text/javascript" src="./static/js/jquery.cookie.js"></script>
+  <script type="text/javascript" src="./static/js/lang.js"></script>
+  <script type="text/javascript" src="./static/js/config.js"></script>
+  <script type="text/javascript" src="./static/js/router.js"></script>
+  <script type="text/javascript" src="./static/js/common.js"></script>
+</head>
+
+<body style="margin:0; padding:0;">
+<div class="container" align="center">
+  <div>
+    <div class="row">
+	  <div class="col-12" style="padding:0 0 1% 0;">
+        <div align="left" class="my-toper">
+            <div class="my-header">
+                <img src="./static/images/logo.png" class="my-logo">
+				<div class="my-info">
+					<span id="login_title1">
+					<script>dw(TT_SetWifiExt)</script></span>
+                	<br>
+            		<span style="font-size:12px;" id="login_title2"><script>dw(TT_SetWifiExtInfo)</script></span></span>
+               	</div>
+            </div>
+        </div>
+        <br><br><br><br>
+        <form method="post" id="loginfrm" action="">
+        <table class="gridtable">
+          <tr>
+            <td colspan="2" align="center" style="font-size:18px; font-weight:bold;" id="login_info"><script>dw(TT_UsreLogin)</script></td>
+          </tr>
+          <tr style="display:none">
+            <td class="gl" id="login_msg"><script>dw(TT_LoginPassword)</script>:</td>
+            <td class="gr">
+              <input type="password" name="password" id="login_pass" value="admin" maxlength="32">
+            </td>
+          </tr>
+          <tr>
+            <td class="gl" id="login_language"><script>dw(TT_Language)</script>:</td>
+            <td class="gr">
+              <select class="select" id="lang">
+                <option value="0"><script>dw(TT_English)</script></option>
+				<option value="8"><script>dw(TT_Portugal)</script></option>
+				<option value="1"><script>dw(TT_SChinese)</script></option>
+              </select>
+            </td>
+          </tr>
+        </table>
+        <br>
+        <table>
+          <tr>
+            <td>
+              <button type="button" class="btn" id="login_btn"><script>dw(TT_Login)</script></button>
+            </td>
+          </tr>
+        </table>
+        </form>
+        <br><br>
+		<div align="center">
+		  <span style="font-size:12px" id="login_copyright"></span>
+		</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="window-wrapper" id="my-alert" style="display:none;">
+  <div class="window">
+    <div style="float:right; padding:10px 10px 0 0;"><img src="./static/images/close.png" height="30" id="close_btn"></div>
+    <div class="window-body" style="text-align: center;">
+      <p style="font-size:16px"><span id="err-msg"></span></p>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+(function(){
+	if ($.cookie('lstatus')=='true'){
+		//document.location = 'http://' + document.domain + rootPath + "home.html?tt=" + new Date().getTime();
+	}
+			
+	$('#login_pass').attr('placeholder',TT_EnterLoginPass);
+	router.getLang();
+})()
+</script>
+</body>
+</html>
